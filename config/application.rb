@@ -15,6 +15,9 @@ require "rails"
   end
 end
 
+# Load business logic
+require 'breakbeat'
+
 # Require the gems listed in Gemfile
 Bundler.require :default, Rails.env
 
