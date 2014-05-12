@@ -1,12 +1,10 @@
-require 'activemodel'
-
 module Breakbeat
   class Pinger
     include ActiveModel::Model
 
     attr_accessor :attributes, :url, :responding
 
-    validates :url_responding
+    validate :url_responding
 
     def self.ping url
       pinger = new url: url
