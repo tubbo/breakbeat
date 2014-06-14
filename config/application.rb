@@ -25,12 +25,12 @@ Bundler.require :default, Rails.env
 module Breakbeat
   class Application < Rails::Application
     # Use EST as our local time zone. (UTC is default)
-    #config.time_zone = 'Eastern Time (US & Canada)'
+    config.time_zone = 'Eastern Time (US & Canada)'
 
-    # Use annotated Ember.js
+    # Use annotated Ember.js unless we're in prod.
     config.ember.variant = :development
 
-    # Use localhost as mail server (for Devise)
-    #config.action_mailer.default_url_options = { host: 'localhost:3000' }
+    # Immediately execute jobs unless we're in prod.
+    config.breakbeat.queue_adapter = :inline
   end
 end
