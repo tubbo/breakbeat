@@ -1,5 +1,5 @@
 require 'breakbeat/railtie'
-require 'mixlib/shellout'
+require 'net/http'
 
 module Breakbeat
   def self.config
@@ -8,9 +8,12 @@ module Breakbeat
 
   # Shells out to the `ping` command to check high-level connectivity of
   # a Service.
+  #
+  # Make an HTTP request to the service's base URL.
   def self.ping service
-    ping = Mixlib::ShellOut.new "ping -c 1 #{service.url}"
-    ping.run_command
-    (not ping.error?)
+    http = Net::HTTP.new URI.parse("http://#{service.url}")
+    request = Net::HTTP::Get.new '/'
+    response = http.request request
+    response.code =~ /\A2|3/
   end
 end
