@@ -9,17 +9,18 @@ class Service < ActiveRecord::Base
   validates :name, presence: true
   validates :url, presence: true
 
-  after_create :ping!
+  after_create :ping
 
   validate :host_is_valid_uri
 
   # Get the current status, inferred from the latest report posted.
   def status
-    reports.current
+    reports.latest.first
   end
 
   # Test if the service is reporting to be down.
   def down?
+    return true unless status.present?
     status.kind =~ /minor|major/
   end
 
@@ -37,6 +38,7 @@ class Service < ActiveRecord::Base
   # updates. This is called right after the Service model is initially
   # created, to "bootstrap" the reports collection.
   def ping!
+    logger.debug "Pinging #{name}.."
     report = Report.for self
     self.reports << report
     report.persisted?

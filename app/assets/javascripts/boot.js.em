@@ -1,1 +1,1 @@
-window.Breakbeat = Ember.Application.create()
+@Breakbeat = Ember.Application.create()

@@ -1,5 +1,5 @@
-# Show the 
+# Show the report's kind and description.
 class ReportSerializer < ActiveModel::Serializer
-  attributes :kind, :text
-  belongs_to :service
+  attributes :kind, :description
+  has_one :service
 end

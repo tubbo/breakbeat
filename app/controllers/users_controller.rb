@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, except: %w(index create login logout)
-  before_action :authenticate_user!, :except => %w(login)
+  #before_action :authenticate_user!, :except => %w(login)
 
   def index
     @users = User.where search_params

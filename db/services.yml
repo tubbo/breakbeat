@@ -3,12 +3,12 @@
 
 connect:
   name: 'Connect'
-  host: 'connect.telvue.com'
+  url: 'connect.telvue.com'
 
 cloudcast:
   name: 'CloudCast'
-  host: 'cloudcast.telvue.com'
+  url: 'cloudcast.telvue.com'
 
 player:
   name: 'CloudCast Video Player'
-  host: 'cloudcast.telvue.com'
+  url: 'cloudcast.telvue.com'

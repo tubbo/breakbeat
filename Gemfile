@@ -25,6 +25,7 @@ gem 'ember_script-rails'
 
 group :development do
   gem 'meta_request'
+  gem 'quiet_assets'
 end
 
 group :development, :test do
@@ -38,5 +39,6 @@ end
 
 group :production do
   gem 'rack-cache'
-  gem 'rails_12factor'
+  gem 'asset_sync'
+  gem 'redis-rails'
 end

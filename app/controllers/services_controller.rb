@@ -1,7 +1,7 @@
 class ServicesController < ApplicationController
   respond_to :json
   before_action :find_service, except: %w(index create)
-  before_action :authenticate_user!, except: %w(index show)
+  #before_action :authenticate_user!, except: %w(index show)
 
   def index
     @services = Service.where search_params
@@ -39,6 +39,10 @@ class ServicesController < ApplicationController
   end
 
   private
+  def search_params
+    params.permit :name, :url
+  end
+
   def find_service
     @service = Service.find params[:id]
   end

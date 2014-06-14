@@ -10,7 +10,7 @@ class Report < ActiveRecord::Base
   validates :description, presence: true
   validates :service, presence: true
 
-  scope :current, -> { order(:created_at).first }
+  scope :latest, -> { order :created_at }
 
   def self.for service
     responsive = Breakbeat.ping service
