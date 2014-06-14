@@ -7,7 +7,7 @@ class Service < ActiveRecord::Base
   accepts_nested_attributes_for :reports
 
   validates :name, presence: true
-  validates :host, presence: true
+  validates :url, presence: true
 
   after_create :ping!
 
@@ -16,6 +16,16 @@ class Service < ActiveRecord::Base
   # Get the current status, inferred from the latest report posted.
   def status
     reports.current
+  end
+
+  # Test if the service is reporting to be down.
+  def down?
+    status.kind =~ /minor|major/
+  end
+
+  # Test if the service is reporting to be up.
+  def up?
+    (not down?)
   end
 
   # Queue this Service to be pinged at a later time.
@@ -27,13 +37,15 @@ class Service < ActiveRecord::Base
   # updates. This is called right after the Service model is initially
   # created, to "bootstrap" the reports collection.
   def ping!
-    self.reports << Report.for(self)
+    report = Report.for self
+    self.reports << report
+    report.persisted?
   end
 
   private
   def host_is_valid_uri
-    URI.parse host
+    URI.parse url
   rescue StandardError => error
-    errors.add :host, "is not valid URI: #{error.message}"
+    errors.add :url, "is not valid URI: #{error.message}"
   end
 end

@@ -1,5 +1,5 @@
 require 'breakbeat/railtie'
-require 'mixlib/shell_out'
+require 'mixlib/shellout'
 
 module Breakbeat
   def self.config

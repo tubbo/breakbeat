@@ -7,7 +7,7 @@ class Report < ActiveRecord::Base
   KINDS = %w(good minor major)
 
   validates :kind, presence: true, inclusion: { in: KINDS }
-  validates :text, presence: true
+  validates :description, presence: true
   validates :service, presence: true
 
   scope :current, -> { order(:created_at).first }
@@ -26,6 +26,8 @@ class Report < ActiveRecord::Base
     end
 
     return service.status if status.nil?
-    service.reports.create kind: status, text: I18n.t("default_status.#{status}")
+    service.reports.create \
+      kind: status,
+      description: I18n.t("default_status.#{status}")
   end
 end

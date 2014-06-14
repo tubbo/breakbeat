@@ -1,0 +1,7 @@
+connect:
+  name: 'Connect'
+  url: 'connect.telvue.com'
+
+cloudcast:
+  name: 'CloudCast'
+  url: 'cloudcast.telvue.com'

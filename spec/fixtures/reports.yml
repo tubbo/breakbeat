@@ -1,0 +1,14 @@
+connect_is_down:
+  kind: 'minor'
+  description: "is currently down. We don't know why."
+  service: connect
+
+connect_has_been_down_for_over_an_hour:
+  kind: 'major'
+  description: "has been down for a long time."
+  service: connect
+
+cloudcast_is_good:
+  kind: 'good'
+  description: "is currently operational"
+  service: cloudcast
