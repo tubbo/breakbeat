@@ -1,12 +1,6 @@
-.row
-  table.large-12.columns
-    thead
-      tr
-        th Service
-        th Current Status
-    tbody
-      each controller
-        tr
-          td = name
-          td class="status #{status}"
-            = status
+each controller
+  .row.service data-status=status
+      .large-4.columns
+        h4.name= name
+      .large-8.columns
+        p.description= statusMessage

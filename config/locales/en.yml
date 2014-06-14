@@ -1,4 +1,5 @@
-default_status:
-  good: "operating normally"
-  minor: "is not responding to automatic pings"
-  major: "has been unresponsive for over thirty minutes"
+en:
+  default_status:
+    good: "operating normally"
+    minor: "is not responding to automatic pings"
+    major: "has been unresponsive for over thirty minutes"

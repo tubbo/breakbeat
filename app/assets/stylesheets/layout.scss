@@ -1,0 +1,23 @@
+body {
+  background: #eee;
+}
+
+header {
+  img#logo {
+    position: relative;
+    top: 15px;
+  }
+}
+
+section#page {
+  background: #fff;
+  min-height: 600px;
+}
+
+footer {
+  p {
+    font-size: 10pt;
+    text-align: center;
+    color: #eee;
+  }
+}

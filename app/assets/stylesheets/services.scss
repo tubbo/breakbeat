@@ -1,0 +1,30 @@
+.service.row {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  //background: #eee;
+
+  h4 {
+    text-align: right
+  }
+
+  p {
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
+
+  &[data-status="good"] {
+    h4 {
+      color: green;
+    }
+  }
+  &[data-status="minor"] {
+    h4 {
+      color: orange;
+    }
+  }
+  &[data-status="major"] {
+    h4 {
+      color: red;
+    }
+  }
+}
