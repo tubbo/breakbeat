@@ -9,10 +9,14 @@ provide status updates to our customer base.
 
 ## Features
 
-- Pings various TelVue services regularly to obtain up-to-the-minute
-  stats on the boxes they're running on.
+- "Pings" various TelVue services regularly to obtain up-to-the-minute
+  stats on the boxes they're running on, using `Net::HTTP` to make GET
+  requests to their base path.
+- Admin UI for editing uptime messages and adding new reports.
+
+### Roadmap
+
 - Builds uptime statistics and graphs from the given data
-- UI built with Ember and Foundation
 
 ## Setup
 

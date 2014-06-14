@@ -11,7 +11,7 @@ module Breakbeat
   #
   # Make an HTTP request to the service's base URL.
   def self.ping service
-    http = Net::HTTP.new URI.parse("http://#{service.url}")
+    http = Net::HTTP.new service.url
     request = Net::HTTP::Get.new '/'
     response = http.request request
     response.code =~ /\A2|3/
