@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.2'
 
 gem 'rails', '~> 4.0'
 gem 'pg'
 gem 'active_model_serializers'
+gem 'mixlib-shellout'
 
 gem 'sass-rails'
 gem 'coffee-rails'

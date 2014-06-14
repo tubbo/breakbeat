@@ -97,6 +97,7 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (5.3.3)
+    mixlib-shellout (1.4.0)
     multi_json (1.10.0)
     pg (0.17.1)
     polyglot (0.3.4)
@@ -190,6 +191,7 @@ DEPENDENCIES
   emblem-rails
   jquery-rails (= 2.2.2)
   meta_request
+  mixlib-shellout
   pg
   pry-byebug
   pry-rails
