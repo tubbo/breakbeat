@@ -15,7 +15,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'sass-rails'
 gem 'coffee-rails'
-gem 'zurb-foundation',  '>= 4.0'
+gem 'foundation-rails'
 gem 'uglifier',         '~> 1.3'
 
 gem 'jquery-rails',     '2.2.2'

@@ -1,11 +1,17 @@
 body {
   background: #eee;
+
+  a {
+    &:hover {
+      text-decoration: underline;
+      color: darken($primary-color, 10%);
+    }
+  }
 }
 
 header {
-  img#logo {
-    position: relative;
-    top: 15px;
+  img {
+    margin-top: 6px;
   }
 }
 
@@ -16,8 +22,17 @@ section#page {
 
 footer {
   p {
+    margin-top: 10px;
     font-size: 10pt;
     text-align: center;
-    color: #eee;
+    color: darken(#ccc, 10%);
+
+    a {
+      color: darken(#ccc, 20%);
+
+      &:hover {
+        color: darken(#ccc, 30%);
+      }
+    }
   }
 }
