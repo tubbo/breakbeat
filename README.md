@@ -1,6 +1,7 @@
 # Breakbeat
 
-TelVue's automatic status page application.
+TelVue's automatic status page application. Useful for keeping customers
+up-to-date on outages or poor performance of their services.
 
 ## Features
 
