@@ -1,2 +1,2 @@
-class ApplicationView extends Em.View
+class Breakbeat.ApplicationView extends Em.View
   didInsertElement: -> $(document).foundation()

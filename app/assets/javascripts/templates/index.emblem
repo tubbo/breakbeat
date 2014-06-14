@@ -1,0 +1,11 @@
+table
+  thead
+    tr
+      th Service
+      th Current Status
+  tbody
+    each controller
+      tr
+        td = name
+        td class="status #{status}"
+          = status

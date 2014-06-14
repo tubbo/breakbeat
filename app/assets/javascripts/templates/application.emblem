@@ -1,0 +1,8 @@
+header
+  h1 TelVue System Status
+
+section#page
+  = output
+
+footer
+  p Copyright 2013 TelVue Corporation. All Rights Reserved.
