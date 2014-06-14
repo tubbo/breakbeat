@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users, except: %w(new edit) do
+  resources :users, except: %w(new edit create) do
     collection do
       post :login
       post :logout

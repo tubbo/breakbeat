@@ -60,6 +60,7 @@ GEM
     barber-emblem (0.1.1)
       barber (>= 0.4.1)
       emblem-source
+    bcrypt (3.1.7)
     builder (3.2.2)
     byebug (2.7.0)
       columnize (~> 0.3)
@@ -228,6 +229,7 @@ DEPENDENCIES
   activejob
   activejob-scheduler
   activemodel-globalid!
+  bcrypt (~> 3.1.7)
   coffee-rails
   ember-rails
   ember_script-rails

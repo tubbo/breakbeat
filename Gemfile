@@ -11,6 +11,7 @@ gem 'activejob-scheduler'
 gem 'sidekiq'
 gem 'iceburn', github: 'tubbo/iceburn', branch: 'master'
 gem 'puma'
+gem 'bcrypt', '~> 3.1.7'
 
 gem 'sass-rails'
 gem 'coffee-rails'

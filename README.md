@@ -1,7 +1,11 @@
 # Breakbeat
 
 TelVue's automatic status page application. Useful for keeping customers
-up-to-date on outages or poor performance of their services.
+up-to-date on outages or poor performance of their services. Breakbeat
+lives on a VPS outside of TelVue's infrastructure, so it can provide
+monitoring from a perspective closer to a customer's. It's also so that
+when our entire infrastructure fails, Breakbeat will still be able to
+provide status updates to our customer base.
 
 ## Features
 
@@ -32,7 +36,15 @@ $ rails server
 
 ## Usage
 
-Look at the front page.
+In production, when you want to create a user, run:
+
+```bash
+$ rake user USER_EMAIL='tscott@telvue.com' USER_PASSWORD='helloimindelaware'
+```
+
+Users can not be created from the API, but they can be updated. Since
+users are for TelVue staff only, you need box access in order to create
+yourself a new user.
 
 ## Contributing
 

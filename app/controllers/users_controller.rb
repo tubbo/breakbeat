@@ -7,16 +7,6 @@ class UsersController < ApplicationController
     respond_with @users
   end
 
-  def create
-    @user = User.new edit_params
-
-    if @user.save
-      respond_with @user
-    else
-      render json: { errors: @user.errors }
-    end
-  end
-
   def show
     respond_with @user
   end
