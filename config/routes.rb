@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :users
+
   extend Iceburn::Routes
 
   resources :services do

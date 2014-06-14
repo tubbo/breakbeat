@@ -10,6 +10,7 @@ gem 'activemodel-globalid', github: 'rails/activemodel-globalid'
 gem 'activejob-scheduler'
 gem 'sidekiq'
 gem 'iceburn', github: 'tubbo/iceburn', branch: 'master'
+gem 'puma'
 
 gem 'sass-rails'
 gem 'coffee-rails'

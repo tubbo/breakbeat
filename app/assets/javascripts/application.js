@@ -7,3 +7,5 @@
 //= require ember
 //= require ember-data
 //= require breakbeat
+
+$(function(){ $(document).foundation(); });
