@@ -1,8 +1,8 @@
-header
+header.row
   h1 TelVue System Status
 
-section#page
+section.row#page
   = output
 
-footer
+footer.row
   p Copyright 2013 TelVue Corporation. All Rights Reserved.

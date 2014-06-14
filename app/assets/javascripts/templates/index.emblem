@@ -1,11 +1,12 @@
-table
-  thead
-    tr
-      th Service
-      th Current Status
-  tbody
-    each controller
+.row
+  table.large-12.columns
+    thead
       tr
-        td = name
-        td class="status #{status}"
-          = status
+        th Service
+        th Current Status
+    tbody
+      each controller
+        tr
+          td = name
+          td class="status #{status}"
+            = status
