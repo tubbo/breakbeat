@@ -5,7 +5,7 @@ class ServicesController < ApplicationController
 
   def index
     @services = Service.where search_params
-    respond_with @services
+    respond_with @services if stale? @services
   end
 
   def create
@@ -19,7 +19,7 @@ class ServicesController < ApplicationController
   end
 
   def show
-    respond_with @service
+    respond_with @service if stale? @service
   end
 
   def update
