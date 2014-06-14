@@ -1,0 +1,14 @@
+
+# These are the services that we will be providing status updates for.
+
+connect:
+  name: 'Connect'
+  host: 'connect.telvue.com'
+
+cloudcast:
+  name: 'CloudCast'
+  host: 'cloudcast.telvue.com'
+
+player:
+  name: 'CloudCast Video Player'
+  host: 'cloudcast.telvue.com'

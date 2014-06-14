@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+unless User.any?
+  User.create \
+    email: 'admin@example.com',
+    password: 'password',
+    password_confirmation: 'password'
+end
+
+unless Service.any?
+  services = YAML::load_file("#{Rails.root}/db/services.yml").with_indifferent_access
+
+  services.each do |name, from_attrs|
+    logger.debug "Creating service :#{name}.."
+    Service.create! from_attrs
+  end
+end
