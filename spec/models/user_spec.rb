@@ -8,7 +8,7 @@ describe User do
       password_confirmation: 'testpassword'
   end
 
-  it "validates given attributes" do
+  it "represents someone who is logged in" do
     expect(subject).to be_valid
   end
 
@@ -27,11 +27,4 @@ describe User do
     subject.password_confirmation = '456'
     expect(subject).to_not be_valid
   end
-
-  it "hashes password when created" do
-    expect(subject.save).to eq(true)
-    expect(subject.password_digest).to_not be_blank
-  end
-
-  after { subject.destroy }
 end

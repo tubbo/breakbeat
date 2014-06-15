@@ -11,6 +11,10 @@ describe Report do
     Report.new kind: 'good', description: 'awesome', service: service
   end
 
+  it "records a timestamped status update for a given service" do
+    expect(subject).to be_valid
+  end
+
   it "belongs to a service" do
     subject.service = nil
     expect(subject).to_not be_valid

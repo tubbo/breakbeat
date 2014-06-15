@@ -2,6 +2,6 @@
 # services to be pinged.
 class PingAllServices < ActiveJob::Base
   def perform
-    Service.map(&:ping) and return true
+    Service.all.map(&:ping) and return true
   end
 end

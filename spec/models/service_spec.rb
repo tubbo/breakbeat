@@ -5,7 +5,7 @@ describe Service do
   fixtures :services, :reports
   subject { Service.new name: 'test', url: 'test.example.com' }
 
-  it "validates parameters" do
+  it "exists in telvue's infrastructure" do
     expect(subject).to be_valid
   end
 
@@ -18,7 +18,6 @@ describe Service do
     subject.url = '%9r1831'
     expect(subject).to_not be_valid
   end
-
 
   context "when checking status" do
     let(:connect) { services :connect }
