@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'breakbeat/pinger'
 
 describe Service do
   fixtures :services, :reports
@@ -24,7 +25,7 @@ describe Service do
     let(:current_report) { reports :connect_is_down }
 
     before do
-      allow(Breakbeat).to receive(:ping).with(connect).and_return true
+      allow(Breakbeat::Pinger).to receive(:check_status_for).with(connect.url).and_return true
     end
 
     it "enqueues a ping" do

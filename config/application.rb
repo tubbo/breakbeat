@@ -16,9 +16,6 @@ require "rails"
   end
 end
 
-# Load business logic
-require 'breakbeat'
-
 # Require the gems listed in Gemfile
 Bundler.require :default, Rails.env
 
@@ -31,6 +28,6 @@ module Breakbeat
     config.ember.variant = :development
 
     # Immediately execute jobs unless we're in prod.
-    config.breakbeat.queue_adapter = :inline
+    config.queue_adapter = :inline
   end
 end
