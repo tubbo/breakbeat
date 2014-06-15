@@ -12,22 +12,28 @@ class Report < ActiveRecord::Base
 
   scope :latest, -> { order :created_at }
 
-  def self.for service
-    responsive = Breakbeat.ping service
-    status = case
-    when responsive && service.down?
-      'good'
-    when (not responsive) && service.up?
-      'minor'
-    when (not responsive) && service.down?
-      'major'
-    else
-      nil
+  class << self
+
+    def for service
+      responsive = Breakbeat.ping service
+      status = status_for responsive, service
+      raise ArgumentError, "Status did not match matrix" if status.nil?
+      service.reports.create \
+        kind: status,
+        description: I18n.t("default_status.#{status}")
     end
 
-    return service.status if status.nil?
-    service.reports.create \
-      kind: status,
-      description: I18n.t("default_status.#{status}")
+    def status_for(responsive, service)
+      case
+      when responsive && service.down?
+        'good'
+      when (not responsive) && service.up?
+        'minor'
+      when (not responsive) && service.down?
+        'major'
+      else
+        nil
+      end
+    end
   end
 end

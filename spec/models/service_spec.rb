@@ -25,21 +25,14 @@ describe Service do
 
     before do
       allow(Breakbeat).to receive(:ping).with(connect).and_return true
-      allow(PingService).to receive(:enqueue)
     end
 
     it "enqueues a ping" do
-      expect(connect.ping).to be_nil
-      expect(PingService).to receive(:enqueue)
+      expect(connect).to respond_to :ping
     end
 
     it "pings immediately" do
       expect(connect.ping!).to eq(true)
-    end
-
-    it "finds latest report status" do
-      expect(subject.reports).to include(current_report)
-      expect(subject.status).to eq(current_report)
     end
   end
 end
