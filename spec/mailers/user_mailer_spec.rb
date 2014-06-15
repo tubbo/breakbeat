@@ -29,7 +29,8 @@ describe UserMailer do
     end
 
     it "includes the text from the mailer view" do
-      expect(mail.body).to_not be_blank
+      expect(mail.body.raw_source).to_not be_blank
+      expect(mail.body.raw_source).to match(/Connect just had an outage\./)
     end
   end
 end
